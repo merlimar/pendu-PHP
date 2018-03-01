@@ -46,7 +46,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             </select>
-            <input type="hidden"
+            <!--<input type="hidden"
                    name="serializedLetters"
                    value="<?= $serializedLetters; ?>">
             <input type="hidden"
@@ -65,7 +65,7 @@
                    name="trials"
                    value="<?=$trials?>">
             <input type="submit"
-                   value="essayer cette lettre">
+                   value="essayer cette lettre">-->
         </div>
     </fieldset>
 </form>

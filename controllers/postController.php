@@ -1,11 +1,12 @@
 <?php
-$wordIndex = intval($_POST['wordIndex']);
-$trials = $_POST['trials'];
-$triedLetters = $_POST['triedLetters'];
-$letters = getUnserializedLetters($_POST['serializedLetters']);
+if(!isset($_COOKIE['gameData'])){
+    die('OOps,faudrait accepter les cookies pour jouer au pendu');
+}
+
+extract(decode($_COOKIE['gameData']));
+
 $word = strtolower($words[$wordIndex]);
 $wordLength = strlen($word);
-$replacementString = $_POST['replacementString'];
 $triedLetter = $_POST['triedLetter'];
 
 $wordFound = false;
@@ -29,5 +30,3 @@ if(!$letterFound){
     }
 }
 $remainingTrials = MAX_TRIALS-$trials;
-
-$serializedLetters = getSerializedLetters($letters);
